@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image List</title>
+</head>
+<body>
+<h1>Image List</h1>
+<ul>
+    {% for image in images %}
+        <li>
+        <h2>{{ image.title }}</h2>
+            <img src="{{ image.image.url }}" alt="{{ image.title }}">
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'upload_image' %}">Upload Image</a>
+</body>
+</html>
